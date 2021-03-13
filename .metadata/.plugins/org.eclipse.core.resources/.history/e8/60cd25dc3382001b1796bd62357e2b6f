@@ -1,0 +1,16 @@
+package com.skill.capg.layeredApp.domain;
+
+public class Employee {
+	void viewCompany()
+	{
+		System.out.println("hi");
+	}
+	void viewProfile()
+	{
+		System.out.println("hi");
+	}
+	void updateProfile()
+	{
+		System.out.println("hi");
+	}
+}

@@ -1,0 +1,48 @@
+package com.pkart.controller;
+
+import java.util.Scanner;
+
+import com.pkart.service.CartServiceImpl;
+import com.pkart.service.CustomerServiceImp;
+import com.pkart.service.ICartService;
+import com.pkart.service.ICustomerService;
+import com.pkart.service.IProductService;
+import com.pkart.service.ProductServiceImpl;
+
+public class BuyOperations {
+	private static ICustomerService customerService;
+	private static IProductService productService;
+	private static ICartService cartService;
+
+	public BuyOperations() {
+
+		if (null == customerService) {
+			customerService = new CustomerServiceImp();
+			productService = new ProductServiceImpl();
+			cartService = new CartServiceImpl();
+		}
+	}
+
+	public static void operations() {
+		Scanner scanner = new Scanner(System.in);
+		while(true) {
+			System.out.println(" Enter 1 to add product to your cart \n 2. Exit");
+			int cartChoice= scanner.nextInt();
+			if (cartChoice==1) {}
+			else break;
+			
+		
+		System.out.println("Enter Product ID to add to cart");
+		int pid = scanner.nextInt();
+		if (cartService.addItem(LogIn.id, productService.getProduct(pid))==true) {
+			System.out.println("your Product is added to cart"+productService.getProduct(pid).toString());
+		}
+		else {
+			System.out.println("your Product is not added to cart");
+		}
+			
+		}
+		
+		CustomerController.operations();
+	}
+}

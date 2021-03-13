@@ -1,0 +1,51 @@
+package com.pkart.dao;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
+import com.pkart.model.Cart;
+import com.pkart.model.Product;
+
+
+public class CartDaoImpl implements ICartDao{
+
+	
+	public static Map<Integer,Cart> carts;
+	CartDaoImpl(){
+	
+	if(carts==null) {
+		carts=new HashMap<>();
+		
+	}
+	}
+	@Override
+	public void addItem(Cart cart, Product product) {
+		List<Product> items= cart.getProducts();
+		items.add(product);
+		cart.setProducts(items);
+		carts.put(cart.getId(), cart);
+		
+	}
+	@Override
+	public void removeItem(Cart cart, Product product) {
+		List<Product> items= cart.getProducts();
+		if (items.contains(product)){
+		items.remove(product);
+		}
+		cart.setProducts(items);
+		carts.put(cart.getId(), cart);	
+		
+	}
+	
+	@Override
+	public Cart viewCart(int cartId) {
+		return carts.get(cartId);
+	}
+	
+	
+	
+	
+	
+}

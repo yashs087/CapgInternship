@@ -1,0 +1,5 @@
+package com.skill.capg.layeredApp.domain;
+
+public class Employee {
+
+}

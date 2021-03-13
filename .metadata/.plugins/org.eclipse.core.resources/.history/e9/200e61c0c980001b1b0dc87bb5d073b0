@@ -1,0 +1,17 @@
+package com.skill.capg.assig5;
+import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+public class UserMainCode {
+	static void displayDate() {
+		Scanner sc = new Scanner(System.in);
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MMMM-dd");
+		LocalDate givenDate = LocalDate.parse(sc.next(), formatter);
+		System.out.println(givenDate);
+	}
+	
+	public static void main(String[] args) {
+	displayDate();
+	}
+	}

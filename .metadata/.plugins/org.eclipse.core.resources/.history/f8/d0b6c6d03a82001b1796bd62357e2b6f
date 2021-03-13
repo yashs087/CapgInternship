@@ -1,0 +1,32 @@
+package com.skill.capg.layeredApp.application;
+
+import java.util.Scanner;
+
+import com.skill.capg.layeredApp.domain.HR;
+
+class HRInterface {
+	
+		static void displayHRInterface() {
+		System.out.println("Enter your choice");
+		System.out.println("1. Add employee");
+		System.out.println("2. Update employee");
+		System.out.println("3. View Employee");
+		System.out.println("3. Remove Employee");
+		Scanner sc=new Scanner(System.in);
+		HR hr= new HR();
+		int choice= sc.nextInt();
+		if (choice==1) {
+			hr.addEmployee();
+		}
+		if (choice==1) {
+			hr.updateEmployee();
+		}
+		if (choice==1) {
+			hr.viewEmployee();
+		}
+		if (choice==1) {
+			hr.removeEmployee();
+		}
+	}
+	
+}

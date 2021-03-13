@@ -1,0 +1,17 @@
+package com.pkart.dao;
+
+
+
+import com.pkart.model.Cart;
+import com.pkart.model.Product;
+
+
+
+public interface ICartdao {
+		
+		void addItem(Cart cart,Product product);
+		
+		void removeItem(Cart cart,Product product);
+		
+		Cart viewCart(int cartId);
+}

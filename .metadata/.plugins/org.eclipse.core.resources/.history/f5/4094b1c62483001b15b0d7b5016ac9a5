@@ -1,0 +1,45 @@
+package com.pkart.service;
+
+
+
+import com.pkart.dao.ICustomerDao;
+import com.pkart.model.Customer;
+import com.pkart.model.Product;
+
+public class CustomerServiceImp implements ICustomerService{
+
+	private static ICustomerDao customerDao;
+
+	public CustomerServiceImp() {
+
+		if (null == customerDao)
+			customerDao = new customerDaoImp();
+
+	}
+	
+	
+	@Override
+	public boolean register(Customer customer) {
+		customerDao.register(customer);
+
+		Product savedCustomer = customerDao.viewProfile(customer.getId());
+
+		if (savedCustomer != null)
+			return true;
+		else
+			return false;
+	}
+
+	@Override
+	public void update(Customer customer) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Customer viewProfile(int customerId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

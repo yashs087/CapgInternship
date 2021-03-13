@@ -1,0 +1,7 @@
+package com.skill.capg.assig5;
+
+public class UserMainCode {
+	static void displayDate() {
+		
+	}
+}

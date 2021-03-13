@@ -1,0 +1,5 @@
+package com.pkart.service;
+
+public interface ICartService {
+	
+}

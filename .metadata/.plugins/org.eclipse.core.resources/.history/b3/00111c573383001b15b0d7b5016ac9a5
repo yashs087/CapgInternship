@@ -1,0 +1,80 @@
+package com.pkart.controller;
+import java.util.List;
+import java.util.Scanner;
+
+import com.pkart.model.Customer;
+import com.pkart.service.CustomerServiceImp;
+import com.pkart.service.ICustomerService;
+
+
+public class LogIn {
+	private static ICustomerService customerService;
+	CustomerController customerController = new CustomerController();
+	public LogIn() {
+
+		if (null == customerService) {
+			customerService = new CustomerServiceImp();
+		}
+	}
+
+	public void operations() {
+
+		Scanner scanner = new Scanner(System.in);
+		boolean status = true;
+		while (status) {
+			System.out.println("------Customer Operations----");
+
+			System.out.println("1. Register \n 2.Log in");
+			System.out.println("Enter the choice:");
+			int choice = scanner.nextInt();
+
+			switch (choice) {
+
+			case 1:
+				System.out.println("enter customer id, name,email, phone, address, password");
+				int id = scanner.nextInt();
+				String name = scanner.next();
+				String email = scanner.next();
+				long phone = scanner.nextLong();
+				String address = scanner.next();
+				String password = scanner.next();
+
+				Customer c= new Customer(id,name,email,phone,address,password);
+
+				if (customerService.register(c)) {
+					System.out.println("Customer regestered successfully.");
+				} else {
+					System.out.println("Customer not registerd.");
+				}
+				break;
+
+			case 2:
+				System.out.println("enter customer id");
+				id = scanner.nextInt();
+				if (customerService.isRegistered(id)) {
+					System.out.println("enter password");
+					password = scanner.next();
+					System.out.println(customerService.matchPass(id));
+					if (customerService.matchPass(id)==password) {
+						System.out.println("Welcome");
+						CustomerController.operations();
+					}
+				}
+				else {
+					System.out.println("No such customer exists");
+				}
+				break;
+
+
+			case 4:
+				System.out.println("Exiting admin operations..!");
+				status = false;
+
+			}
+
+		}
+
+	}
+
+
+}

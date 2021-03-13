@@ -1,0 +1,34 @@
+package com.skill.capg.assig6.player;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		
+		ArrayList<Player> players=new ArrayList<Player>();
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter the no. of players:");
+		int n = sc.nextInt();
+		System.out.println(n);
+		Player p1[]= new Player[n];
+		for (int i =0; i<n;i++) {
+			System.out.println("Enter the name of players:");
+			String name=sc.next();
+			p1[i].setName(name);
+			System.out.println("Enter the country of players:");
+			p1[i].setCountry(sc.next());
+			System.out.println("Enter the skill of players:");
+			p1[i].setSkill(sc.next());
+			
+			players.add(p1[i]);
+			
+		}
+		
+		
+		PlayerBO p=new PlayerBO();
+		p.displayAllPlayerDetails(players);
+		sc.close();
+	}
+}

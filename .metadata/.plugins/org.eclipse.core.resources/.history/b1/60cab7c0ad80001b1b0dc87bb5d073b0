@@ -1,0 +1,36 @@
+package com.skill.capg.lab5;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+class UserDefinedException extends Exception
+{
+    public String toString()
+    {
+        return "First name and last name can't be null";
+    }
+}
+class Exercise2 {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+    	Scanner scanner=new Scanner(System.in);
+		scanner.useDelimiter("\n");
+		String str=scanner.next();
+		//System.out.println(str);
+		String[] name = str.split(" ")
+
+        try
+        {
+            if(name.length<2)
+            {
+                throw new UserDefinedException();
+            }
+            else
+            System.out.println("Name is "+name[0]+" "+name[1]);
+        }
+        catch (Exception e) {
+            // TODO: handle exception
+        }
+    }
+
+}

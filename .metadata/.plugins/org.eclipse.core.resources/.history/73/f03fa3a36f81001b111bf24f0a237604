@@ -1,0 +1,30 @@
+package com.skill.capg.assig6;
+import java.util.*;
+public class SortScores {
+	
+	int n;
+	SortScores(int n){
+		this.n=n;
+	}
+	void sort(){
+		ArrayList<Integer> scores =new ArrayList<Integer>();
+		Scanner scan= new Scanner(System.in);
+		for(int i=0;i<n;i++) {
+			scores.add(scan.nextInt());
+		}
+		
+		Collections.sort(scores); 
+		for(Integer score:scores) System.out.println(score);
+	}
+	
+	public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		int n=sc.nextInt();
+		
+		SortScores s1 =new SortScores(n);
+		s1.sort();
+		
+	}
+		
+}

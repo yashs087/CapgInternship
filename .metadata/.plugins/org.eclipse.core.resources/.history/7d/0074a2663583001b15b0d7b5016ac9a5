@@ -1,0 +1,19 @@
+package com.pkart.service;
+
+import java.util.List;
+
+import com.pkart.model.Customer;
+import com.pkart.model.Product;
+
+public interface ICustomerService {
+
+	boolean register(Customer customer);
+
+	boolean update(Customer customer);
+
+	Customer viewProfile(int customerId);
+	
+	boolean isRegistered(int customerId);
+	
+	String matchPass(int customerId);
+}

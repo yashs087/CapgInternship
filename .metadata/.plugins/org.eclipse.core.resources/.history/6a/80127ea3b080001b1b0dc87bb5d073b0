@@ -1,0 +1,51 @@
+package com.skill.capg.lab5;
+import java.util.Scanner;
+
+
+class UserDefinedException extends Exception
+{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public String toString()
+    {
+        return "First name and last name can't be null";
+    }
+}
+class Exercise2 {
+	
+	
+	
+    public static void main(String[] args){
+        // TODO Auto-generated method stub
+    	System.out.println("Please enter you full name");
+    	Scanner scanner=new Scanner(System.in);
+		scanner.useDelimiter("\n");
+		String str=scanner.next();
+		//System.out.println(str);
+		String[] name = str.split(" ");
+		/**for(int i=0;i<name.length;i++) {
+			System.out.println(name[i]);
+		}
+		*/
+
+        try
+        {
+            if(name.length<2)
+            {
+            	for(int i=0;i<name.length;i++) {
+        			System.out.println(name[i]);
+        		}
+                throw new UserDefinedException();
+            }
+            else
+            System.out.println("Name is "+name[0]+" "+name[1]);
+        }
+        catch (Exception e) {
+            // TODO: handle exception
+        }
+    }
+
+}

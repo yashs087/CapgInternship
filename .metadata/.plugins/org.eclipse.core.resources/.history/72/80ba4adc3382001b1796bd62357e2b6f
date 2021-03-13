@@ -1,0 +1,25 @@
+package com.skill.capg.layeredApp.domain;
+
+public class HR {
+	void addEmployee()
+	{
+		System.out.println("Enter Employee Name");
+		
+		System.out.println("Enter Employee Name");
+		
+		
+		
+	}
+	void updateEmployee()
+	{
+		System.out.println("hi");
+	}
+	void viewEmployee()
+	{
+		
+	}
+	void removeEmployee()
+	{
+		System.out.println("hi");
+	}
+}

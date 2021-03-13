@@ -1,0 +1,27 @@
+package com.skill.capg.layeredApp.application;
+
+import java.util.Scanner;
+
+import com.skill.capg.layeredApp.domain.Employee;
+
+public class EmpInterface {
+	static void displayEmpInterface() {
+	System.out.println("Enter your choice");
+	System.out.println("1. View company");
+	System.out.println("2. View your profile");
+	System.out.println("3. Update your profile");
+	Scanner sc=new Scanner(System.in);
+	
+	int choice= sc.nextInt();
+	Employee e =new Employee();
+	if (choice==1) {
+		e.viewCompany();
+	}
+	if (choice==2) {
+		e.viewProfile();
+	}
+	if (choice==1) {
+		e.UpdateProfile();
+	}
+	}
+}

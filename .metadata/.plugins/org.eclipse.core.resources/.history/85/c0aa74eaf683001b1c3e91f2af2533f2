@@ -1,0 +1,64 @@
+package com.pkart.dao;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
+import com.pkart.model.Cart;
+import com.pkart.model.Product;
+
+
+public class CartDaoImpl implements ICartDao{
+
+	
+	public static Map<Integer,Cart> carts;
+	public CartDaoImpl(){
+	
+	if(carts==null) {
+		carts=new HashMap<>();
+		
+	}
+	}
+	@Override
+	public void addItem(int cartId, Product product) {
+		
+		if (carts.get(new Integer(cartId))==null) {
+			List<Product> cart = new ArrayList<Product>();
+			Cart bCart = new Cart(cartId,cart);
+			carts.put(cartId,bCart);
+		}
+		else {
+		Cart cart=carts.get(new Integer(cartId));
+		List<Product> items= cart.getProducts();
+		items.add(product);
+		cart.setProducts(items);
+		carts.put(new Integer(cart.getId()), cart);
+		}
+		
+	}
+	@Override
+	public void removeItem(int cartId, Product product) {
+		Cart cart=carts.get(new Integer(cartId));
+		if (carts.get(new Integer(cartId))==null) {
+			System.out.println("No item available");
+		}
+		else {
+		List<Product> items= cart.getProducts();
+		if (items.contains(product)){
+		items.remove(product);
+		cart.setProducts(items);
+		carts.put(new Integer(cart.getId()), cart);	
+		}
+		else {
+			System.out.println("This item is not in your cart");
+		}
+		}
+	}
+	
+	@Override
+	public Cart viewCart(int cartId) {
+		return carts.get(cartId);
+	}
+}

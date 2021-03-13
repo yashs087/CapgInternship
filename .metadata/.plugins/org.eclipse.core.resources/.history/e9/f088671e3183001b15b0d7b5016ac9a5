@@ -1,0 +1,41 @@
+package com.pkart.dao;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.pkart.model.Customer;
+import com.pkart.model.Product;
+
+public class CustomerDaoImp implements ICustomerDao{
+
+	
+	private static Map<Integer, Customer> customers;
+
+	public CustomerDaoImp() {
+
+		if (null == customers) {
+			customers = new HashMap<>();
+		}
+
+	}
+	
+	
+	@Override
+	public void register(Customer customer) {
+		
+		customers.put(customer.getId(), customer);
+	}
+
+	@Override
+	public void update(Customer customer) {
+		
+		customers.put(customer.getId(), customer);
+	}
+
+	@Override
+	public Customer viewProfile(int customerId) {
+		System.out.println(customerId);
+		return customers.get(customerId);
+	}
+	
+}

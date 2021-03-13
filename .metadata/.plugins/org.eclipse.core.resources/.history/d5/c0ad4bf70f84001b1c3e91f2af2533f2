@@ -1,0 +1,110 @@
+package com.pkart.controller;
+
+import java.util.List;
+import java.util.Scanner;
+
+import com.pkart.dao.ICartDao;
+import com.pkart.model.Customer;
+import com.pkart.model.Product;
+import com.pkart.service.CartServiceImpl;
+import com.pkart.service.CustomerServiceImp;
+import com.pkart.service.ICartService;
+import com.pkart.service.ICustomerService;
+import com.pkart.service.IProductService;
+import com.pkart.service.ProductServiceImpl;
+
+public class CustomerController {
+
+	private static ICustomerService customerService;
+	private static IProductService productService;
+	private static ICartService cartService;
+
+	public CustomerController() {
+
+		if (null == customerService) {
+			customerService = new CustomerServiceImp();
+			productService = new ProductServiceImpl();
+			cartService = new CartServiceImpl();
+		}
+	}
+
+	public static void operations() {
+
+		Scanner scanner = new Scanner(System.in);
+		boolean status = true;
+		while (status) {
+			System.out.println("------Customer Operations----");
+
+			System.out.println("1.Update Profile \n 2.View profile \n 3. View Products \n 4. View Cart \n 3.Exit");
+			System.out.println("Enter the choice:");
+			int choice = scanner.nextInt();
+
+			switch (choice) {
+
+			case 1:
+				System.out.println("enter name,email, phone, address, password");
+				String name = scanner.next();
+				String email = scanner.next();
+				long phone = scanner.nextLong();
+				String address = scanner.next();
+				int password = scanner.nextInt();
+
+				Customer c= new Customer(LogIn.id,name,email,phone,address,password);
+
+				if (customerService.register(c)) {
+					System.out.println("Customer regestered successfully.");
+				} else {
+					System.out.println("Customer not registerd.");
+				}
+				
+
+			case 2:
+				Customer customer = customerService.viewProfile(LogIn.id);
+				System.out.println(customer);
+				
+				
+				
+			case 3:
+				List<Product> allProducts = productService.getAllProducts();
+
+				for (Product prod : allProducts) {
+					System.out.println(prod);
+				}
+				
+				//BuyOperations.operations();
+				/**
+				int flag=1;
+				while(flag==0) {
+					System.out.println(" Enter 1 to add product to your cart \n 2. Exit");
+					int cartChoice= scanner.nextInt();
+					if (cartChoice==1) {}
+					else flag=1;
+					
+				
+				System.out.println("Enter Product ID to add to cart");
+				int pid = scanner.nextInt();
+				if (cartService.addItem(LogIn.id, productService.getProduct(pid))==true) {
+					System.out.println("your Product is added to cart"+productService.getProduct(pid).toString());
+				}
+				else {
+					System.out.println("your Product is not added to cart");
+				}
+					
+				}
+				*/
+				break;
+			case 4:
+				System.out.println("Welcome to your cart");
+				System.out.println(cartService.viewCart(LogIn.id));
+				CartOperations.operations();
+			case 5:
+				System.out.println("Exiting admin operations..!");
+				status = false;
+
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,64 @@
+package com.skill.capg.lab4;
+
+interface IPlayerStatistics{
+	public void displayPlayerStatistics();
+}
+
+abstract class Player {
+	protected String name;
+	protected String teamName;
+	protected int noOfMatches;
+	
+	Player(String name, String teamName, int noOfMatches){
+		this.name=name;
+		this.teamName=teamName;
+		this.noOfMatches=noOfMatches;
+	}
+}
+
+class CricketPlayer extends Player implements IPlayerStatistics{
+	private int totalRunsScored;
+	private int noOfWicketsTaken;
+	
+	CricketPlayer(int totalRunsScored, int noOfWicketsTaken, String name, String teamName, int noOfMatches){
+		super(name, teamName, noOfMatches);
+		this.totalRunsScored=totalRunsScored;
+		this.noOfMatches=noOfWicketsTaken;
+	}
+	public void displayPlayerStatistics(){
+		System.out.println("Name: "+ name);
+		System.out.println("Team Name: "+ teamName);
+		System.out.println("number of matches: "+ noOfMatches);
+		System.out.println("Total runs scored: "+ totalRunsScored);
+		System.out.println("Number of wickets taken: "+noOfWicketsTaken);
+	}
+}
+
+class HockeytPlayer extends Player implements IPlayerStatistics{
+	
+	private String position;
+	private int noOfGoals;
+	HockeytPlayer(String name, String teamName, int noOfMatches) {
+		super(name, teamName, noOfMatches);
+		this.position=position;
+		this.noOfGoals=noOfGoals;
+	}
+	
+	
+	
+	public void displayPlayerStatistics(){
+		System.out.println("Name: "+ name);
+		System.out.println("Team Name: "+ teamName);
+		System.out.println("number of matches: "+ noOfMatches);
+		System.out.println("Position: "+ position);
+		System.out.println("Number of goals: "+noOfGoals);
+	}
+}
+public class Exercise2 {
+	public static void main(String[] args) {
+		CricketPlayer cp1 = new CricketPlayer(50,60,"hardik","India",45);
+		cp1.displayPlayerStatistics();
+	}
+
+}
+

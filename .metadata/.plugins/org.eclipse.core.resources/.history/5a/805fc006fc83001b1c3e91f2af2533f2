@@ -1,0 +1,56 @@
+package com.pkart.controller;
+
+import java.util.Scanner;
+
+import com.pkart.service.CartServiceImpl;
+import com.pkart.service.CustomerServiceImp;
+import com.pkart.service.ICartService;
+import com.pkart.service.ICustomerService;
+import com.pkart.service.IProductService;
+import com.pkart.service.ProductServiceImpl;
+
+public class CartOperations {
+	private static ICustomerService customerService;
+	private static IProductService productService;
+	private static ICartService cartService;
+
+	public CartOperations(){
+
+		if (null == customerService) {
+			customerService = new CustomerServiceImp();
+			productService = new ProductServiceImpl();
+			cartService = new CartServiceImpl();
+		}
+	}
+
+	public static void operations() {
+		Scanner scanner = new Scanner(System.in);
+		while(true) {
+			System.out.println("1. Add more items\n2. Remove an Item\n3. exit");
+			int cartChoice= scanner.nextInt();
+			if (cartChoice==3) break;
+			else if(cartChoice==1) {
+				System.out.println("Enter Product ID to add to cart");
+				int pid = scanner.nextInt();
+				if (cartService.addItem(LogIn.id, productService.getProduct(pid))==true) {
+					System.out.println("your Product is added to cart"+productService.getProduct(pid).toString());
+				}
+				else {
+					System.out.println("your Product is not added to cart");
+				}
+			}
+			else {
+				System.out.println("Enter Product ID to remove the product from the cart");
+				int pid = scanner.nextInt();
+				if (cartService.removeItem(LogIn.id, productService.getProduct(pid))==true) {
+					System.out.println("your Product is removed from the cart"+productService.getProduct(pid).toString());
+				}
+				else {
+					System.out.println("your Product is not removed from the cart ");
+				}
+			}
+			
+			}
+		
+	}
+}

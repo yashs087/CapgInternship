@@ -1,0 +1,21 @@
+package com.skill.capg.layeredApp.domain;
+
+public class EmployeeBO {
+	public void viewCompany()
+	{
+		System.out.println("Welcome to Capgemini");
+		System.out.println("We are MNC having presence all across the Globe");
+		System.out.println("We are Service based company");
+	}
+	public void viewProfile()
+	{
+		System.out.println("hi");
+		System.out.println("ID",getId());
+		System.out.println("Name",this.name);
+		System.out.println("Designation",this.desig);
+	}
+	public void updateProfile()
+	{
+		System.out.println("hi");
+	}
+}

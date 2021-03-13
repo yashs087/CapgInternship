@@ -1,0 +1,71 @@
+package com.pkart.controller;
+
+import java.util.Scanner;
+
+import com.pkart.model.Customer;
+
+import p.pkart.util.InputUtil;
+
+public class CustomerController {
+	long id; 
+	String name;
+	String email;
+	long phone;
+	String address;
+	Customer cust;
+	Scanner scanner = InputUtil.getScanner();
+	public void operations() {
+	boolean status = true;
+	while (status) {
+		System.out.println("---Welcome to Customer operations---");
+		System.out.println(
+				" 1. register \n 2.View non Expired \n 3. add product in cart \n 4. view Cart\n 5.Exit");
+
+		System.out.println("enter your choice:");
+		int choice = scanner.nextInt();
+		switch (choice) {
+			
+		case 1:
+			 cust = register();
+			 if (employService.add(employ)) {
+					System.out.println("employ added with " + employ.getId() + " successfully.!");
+				} else {
+					System.out.println("employ not added.!");
+				}
+				
+			break;
+
+		case 2:
+			
+			
+			break;
+			
+		case 3:
+			
+			break;
+		case 4:
+			
+			break;
+		case 5:
+			System.out.println("Exiting.....");
+			System.exit(0);
+			
+		}
+		
+		}
+
+	}
+	
+	private Customer register() {
+
+		
+		System.out.println("Enter customer id,name,email,phone,address:");
+		id = scanner.nextLong();
+		name = scanner.next();
+		email = scanner.next();
+		phone = scanner.nextLong();
+		address = scanner.next();
+		return new Customer(id, name, email, phone, address);
+	}
+	}
+

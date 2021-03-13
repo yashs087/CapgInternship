@@ -1,0 +1,24 @@
+package com.pkart.dao;
+
+import com.pkart.model.Customer;
+
+public class CustomerDaoImp implements ICustomerDao {
+
+	public void register(Customer customer) {
+		
+
+	}
+
+	@Override
+	public void update(Customer customer) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Customer viewProfile(int custId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

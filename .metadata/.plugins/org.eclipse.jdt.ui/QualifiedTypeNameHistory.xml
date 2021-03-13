@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.skill.capg.bank.welcome"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+    <fullyQualifiedTypeName name="com.skill.capg.lab5.NameException"/>
+    <fullyQualifiedTypeName name="com.skill.capg.lab5.com.cg.eis.exception.EmpException"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="com.skill.capg.layeredApp.domain.HR"/>
+    <fullyQualifiedTypeName name="com.skill.capg.layeredApp.domain.Employee"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.pkart.dao.ICartdao"/>
+    <fullyQualifiedTypeName name="com.sun.javafx.collections.MappingChange.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="com.pkart.model.Cart"/>
+    <fullyQualifiedTypeName name="com.pkart.model.Customer"/>
+    <fullyQualifiedTypeName name="com.pkart.service.IProductService"/>
+    <fullyQualifiedTypeName name="com.pkart.dao.CartDaoImpl"/>
+    <fullyQualifiedTypeName name="com.pkart.dao.ICartDao"/>
+    <fullyQualifiedTypeName name="com.pkart.service.ICartService"/>
+    <fullyQualifiedTypeName name="com.pkart.service.CartServiceImpl"/>
+    <fullyQualifiedTypeName name="com.pkart.model.Product"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>

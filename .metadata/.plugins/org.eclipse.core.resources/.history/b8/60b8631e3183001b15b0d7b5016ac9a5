@@ -1,0 +1,90 @@
+package com.pkart.controller;
+
+import java.util.List;
+import java.util.Scanner;
+
+import com.pkart.model.Customer;
+import com.pkart.model.Product;
+import com.pkart.service.CustomerServiceImp;
+import com.pkart.service.ICustomerService;
+import com.pkart.service.IProductService;
+import com.pkart.service.ProductServiceImpl;
+
+public class CustomerController {
+
+	private static ICustomerService customerService;
+
+	public CustomerController() {
+
+		if (null == customerService) {
+			customerService = new CustomerServiceImp();
+		}
+	}
+
+	public void operations() {
+
+		Scanner scanner = new Scanner(System.in);
+		boolean status = true;
+		while (status) {
+			System.out.println("------Customer Operations----");
+
+			System.out.println("1. Register \n 2.Update Profile \n 3.View profile \n 4.Exit");
+			System.out.println("Enter the choice:");
+			int choice = scanner.nextInt();
+
+			switch (choice) {
+
+			case 1:
+				System.out.println("enter product id, name,email, phone, address, password");
+				int id = scanner.nextInt();
+				String name = scanner.next();
+				String email = scanner.next();
+				long phone = scanner.nextLong();
+				String address = scanner.next();
+				String password = scanner.next();
+
+				Customer c= new Customer(id,name,email,phone,address,password);
+
+				if (customerService.register(c)) {
+					System.out.println("Customer regestered successfully.");
+				} else {
+					System.out.println("Customer not registerd.");
+				}
+				break;
+
+			case 2:
+				System.out.println("enter product id, name,email, phone, address, password\n");
+				id = scanner.nextInt();
+				name = scanner.next();
+				email = scanner.next();
+				phone = scanner.nextLong();
+				address = scanner.next();
+				password = scanner.next();
+
+				Customer c2= new Customer(id,name,email,phone,address,password);
+
+				if (customerService.update(c2)) {
+					System.out.println("Your deatils updated successfully.");
+				} else {
+					System.out.println("Your deatils did not updated successfully.");
+				}
+				break;
+
+			case 3:
+				System.out.println("enter customer id:");
+				id = scanner.nextInt();
+				Customer customer = customerService.viewProfile(id);
+				System.out.println(customer);
+				break;
+
+			case 4:
+				System.out.println("Exiting admin operations..!");
+				status = false;
+
+			}
+
+		}
+
+	}
+
+}

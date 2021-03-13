@@ -1,0 +1,14 @@
+package com.skill.capg.lab3;
+
+public class Exercise5 {
+	static void countText(String text) {
+		String[] str= text.split("\n");
+		for(int i=0;i<str.length;i++) {
+			System.out.println(str[i]);
+		}
+	}
+	
+	public static void main(String[] args) {
+		countText("hello\nhow are you!\nwhat is your name");
+	}
+}

@@ -1,0 +1,20 @@
+package com.skill.capg.lab3;
+
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class Exercise1 {
+
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		
+		StringTokenizer input=new StringTokenizer(scanner.next()," ");
+		while(input.hasMoreTokens())
+		{
+			System.out.println(input.nextToken());
+		}
+		
+
+	}
+
+}

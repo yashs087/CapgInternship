@@ -1,0 +1,32 @@
+package com.skill.capg.layeredApp.domain;
+
+public class Employee {
+	int id;
+	String name; //Name of employee
+	String desig; //Designation
+	Employee(int id){
+		this.id=id;
+	}
+	Employee(int id,String name){
+		Employee(id);
+		this.name=name;
+	}
+	Employee(int id, String name, String desig){
+		Employee(id, name);
+		this.desig=desig;
+	}
+	public void viewCompany()
+	{
+		System.out.println("Welcome to Capgemini");
+		System.out.println("We are MNC having presence all across the Globe");
+		System.out.println("We are Service based company");
+	}
+	public void viewProfile()
+	{
+		System.out.println("hi");
+	}
+	public void updateProfile()
+	{
+		System.out.println("hi");
+	}
+}
