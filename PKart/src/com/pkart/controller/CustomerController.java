@@ -41,7 +41,7 @@ public class CustomerController {
 
 			switch (choice) {
 
-			case 1:
+			case 1: //Update profile
 				System.out.println("enter name,email, phone, address, password");
 				String name = scanner.next();
 				String email = scanner.next();
@@ -58,13 +58,13 @@ public class CustomerController {
 				}
 				break;
 
-			case 2:
+			case 2: //view profile
 				Customer customer = customerService.viewProfile(LogIn.id);
 				System.out.println(customer);
 				break;
 				
 				
-			case 3:
+			case 3: //view all products
 				List<Product> allProducts = productService.getAllProducts();
 
 				for (Product prod : allProducts) {
@@ -93,7 +93,7 @@ public class CustomerController {
 				}
 			}
 				break;
-			case 4:
+			case 4: // View cart
 				System.out.println("Welcome to your cart");
 				
 				flag=0;
@@ -102,7 +102,7 @@ public class CustomerController {
 					System.out.println("1. Add more items\n2. Remove an Item\n3. exit");
 					int cartChoice= scanner.nextInt();
 					if (cartChoice==3) flag=1;
-					else if(cartChoice==1) {
+					else if(cartChoice==1) { // Add more products to the cart
 						System.out.println("Enter Product ID to add to cart");
 						int pid = scanner.nextInt();
 						if (cartService.addItem(LogIn.id, productService.getProduct(pid))==true) {
@@ -112,7 +112,7 @@ public class CustomerController {
 							System.out.println("your Product is not added to cart");
 						}
 					}
-					else if (cartChoice==2){
+					else if (cartChoice==2){ //Removing products from the cart
 						System.out.println("Enter Product ID to remove the product from the cart");
 						int pid = scanner.nextInt();
 						if (cartService.removeItem(LogIn.id, productService.getProduct(pid))==true) {
@@ -122,14 +122,14 @@ public class CustomerController {
 							System.out.println("your Product is not removed from the cart ");
 						}
 					}
-					else {
+					else { 
 						System.out.println("Wrong Selection");
 					}
 					
 					}
 				break;
-			case 5:
-				System.out.println("Exiting admin operations..!");
+			case 5: //Exiting from cart
+				System.out.println("Exiting Cart....");
 				status = false;
 
 			}

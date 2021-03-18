@@ -1,10 +1,14 @@
 package com.pkart.dao;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+
 import com.pkart.model.Customer;
-import com.pkart.model.Product;
+
 
 public class CustomerDaoImp implements ICustomerDao{
 
@@ -24,7 +28,7 @@ public class CustomerDaoImp implements ICustomerDao{
 			customers.put(2007, new Customer(2007,"Bholu","bholu@gmail.com",852440185,"Faizabad",12345));
 			customers.put(2008, new Customer(2008,"Naira","naira@gmail.com",995640185,"Meerut",12345));
 			customers.put(2009, new Customer(2009,"Shruti","sharuti@gmail.com",856140185,"Faizadabad",12345));
-			customers.put(20010, new Customer(20010,"Sapna","sapna@gmail.com",756420185,"Hisaar",12345));
+			customers.put(2010, new Customer(2010,"Sapna","sapna@gmail.com",756420185,"Hisaar",12345));
 		}
 
 	}
@@ -65,5 +69,34 @@ public class CustomerDaoImp implements ICustomerDao{
 		return customer.getPassword();
 		
 	}
+
+
+	@Override
+	public List<Customer> allCustomer() {
+		ArrayList<Customer> list = new ArrayList<>();
+
+		Collection<Customer> customerList = customers.values();
+
+		for (Customer c : customerList) {
+			list.add(c);
+		}
+
+		return list;
+	}
 	
-}
+	@Override
+	public void removeCustomer(int customerId) {
+		
+		if (customers.containsKey(customerId)){
+		customers.remove(customerId);
+		System.out.println(customerId+"is removed");
+		}
+		else {
+			System.out.println("No such Customer Exists");
+		}
+		}
+	}
+	
+	
+	
+

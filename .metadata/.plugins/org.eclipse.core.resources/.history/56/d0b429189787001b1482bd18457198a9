@@ -1,0 +1,17 @@
+package com.skill.caog.assig8;
+import java.util.Scanner;
+public class Main {
+
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int choice;
+		System.out.println("   use\n1.comaprator");
+		choice=scanner.nextInt();
+		
+		if(choice==1) {
+			useComparator()
+		}
+	}
+	
+}

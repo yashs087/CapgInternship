@@ -1,0 +1,31 @@
+package com.pkart.dao;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.pkart.model.Cart;
+import com.pkart.model.Product;
+
+public class DowTest {
+	ICartDao cartDao = new CartDaoImpl();
+	IProductDao productDao = new ProductDaoImpl();
+	Cart cart=cartDao.viewCart(1);
+	@Before
+    public void init() {
+        
+        cartDao.addItem(1, new Product(2,"Fan",1200));
+        
+        
+    }
+	
+	
+	@Test
+	public void test() {
+		
+		assertEquals(cart,cartDao.viewCart(1));
+		
+	}
+
+}

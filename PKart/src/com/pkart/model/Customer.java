@@ -73,5 +73,6 @@ public class Customer {
 	public int getPassword() {
 		return password;
 	}
-
+	
+	
 }

@@ -14,4 +14,5 @@ public interface IProductService {
 
 	List<Product> getAllProducts();
 
+	boolean removeProduct(int productId);
 }

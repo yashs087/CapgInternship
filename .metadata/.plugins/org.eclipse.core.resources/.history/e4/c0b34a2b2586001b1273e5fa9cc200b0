@@ -1,0 +1,14 @@
+package com.pkart.dao;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class DowTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -1,0 +1,20 @@
+package com.pkart.dao;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.pkart.model.Product;
+
+public class DowTest {
+	ICartDao cartDao = new CartDaoImpl();
+	IProductDao productDao = new ProductDaoImpl();
+	
+	@Test
+	public void test() {
+		assertEquals(productDao.getProduct(1), new Product(2,"Fan",1200));
+		
+		fail("Not yet implemented");
+	}
+
+}

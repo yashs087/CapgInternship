@@ -1,0 +1,24 @@
+package com.pkart.service;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.pkart.model.Customer;
+
+public class CustomerServiceRegisterTest {
+	
+	ICustomerService customerService = new CustomerServiceImp();
+	
+	@Test
+	public void test() {
+		Customer customer = new Customer(12,"Hitesh","Hitesh@gamil.com",8522369,"Delhi",123456);
+		assertEquals(true,customerService.register(customer));
+		assertEquals(false,customerService.update(customer));
+		assertEquals(false,customerService.isRegistered(customer.getId()));
+		assertEquals(false,customerService.vailidate(1234,4567));
+	}
+	
+	
+
+}

@@ -14,4 +14,5 @@ public interface IProductDao {
 
 	List<Product> getAllProducts();
 
+	Product removeProduct(int productId);
 }

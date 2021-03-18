@@ -17,6 +17,11 @@ public class LogIn {
 		}
 	}
 
+	boolean isVailidPass(int id,int password) {
+		return customerService.vailidate(id, password);
+	}
+	
+	
 	public void operations() {
 
 		Scanner scanner = new Scanner(System.in);
@@ -52,28 +57,36 @@ public class LogIn {
 			case 2:
 				System.out.println("enter customer id");
 				id = scanner.nextInt();
+				try {
 				if (customerService.isRegistered(id)) {
 					System.out.println("enter password");
 					password = scanner.nextInt();
 					//System.out.println(customerService.vailidate(id, password));
 					
 					//CustomerController.operations();
-					if (customerService.vailidate(id, password)) {
+					if (isVailidPass(id, password)) {
 						System.out.println("Welcome");
 						CustomerController.operations();
-					}
+					}	
 				}
+			
+				
 				else {
 					System.out.println("No such customer exists");
 				}
-				
+				}
+				catch(Exception e) {
+					
+				}
+			
 
-
+				break;
 			case 3:
 				System.out.println("Exiting admin operations..!");
 				status = false;
 
 			}
+			
 
 		}
 

@@ -7,18 +7,20 @@ import com.pkart.model.Product;
 
 public class CartServiceImpl implements ICartService{
 
-	
+	private static IProductService productService;
 	private static ICartDao cartDao;
 	
 	public CartServiceImpl() {
 
 		if (cartDao==null) {
 			cartDao= new CartDaoImpl();
+			productService= new ProductServiceImpl();
 		}
 	}
 
 	@Override
 	public boolean addItem(int cartId, Product product) {
+
 		cartDao.addItem(cartId, product);
 		Cart currentCart = cartDao.viewCart(cartId);
 		if (currentCart!=null) {

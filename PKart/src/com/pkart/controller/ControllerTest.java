@@ -1,0 +1,21 @@
+package com.pkart.controller;
+
+
+
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
+import org.junit.Test;
+
+public class ControllerTest {
+	LogIn logIn =new LogIn();
+	boolean result = logIn.isVailidPass(2002,12345);
+	
+	
+	@Test
+	public void CheckTrueVailidation() {
+		assertTrue(logIn.isVailidPass(2002,12345));
+		fail("Not yet implemented");
+	}
+
+}

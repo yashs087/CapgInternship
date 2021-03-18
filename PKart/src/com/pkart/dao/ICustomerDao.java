@@ -1,6 +1,7 @@
 package com.pkart.dao;
 
 import com.pkart.model.Customer;
+import java.util.List;
 
 public interface ICustomerDao {
 
@@ -14,5 +15,8 @@ public interface ICustomerDao {
 	
 	int vailidate(int customerId);
 	
+	List<Customer> allCustomer();
+	
+	void removeCustomer(int customerId);
 	
 }

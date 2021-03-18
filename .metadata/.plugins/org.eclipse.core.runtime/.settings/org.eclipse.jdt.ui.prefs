@@ -1,5 +1,5 @@
 content_assist_disabled_computers=org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.jdt.ui.javaPostfixProposalCategory\u0000org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.jdt.ui.javaChainProposalCategory\u0000
-content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="com.pkart.service.ICartService"><rhs name\="com.pkart.service.CartServiceImpl"/></lhs></history>
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="com.pkart.service.ICartService"><rhs name\="com.pkart.service.CartServiceImpl"/></lhs><lhs name\="com.pkart.service.ICustomerService"><rhs name\="com.pkart.service.CustomerServiceImp"/></lhs><lhs name\="com.pkart.util.ParseDate"><rhs name\="com.pkart.util.ParseDate"/></lhs><lhs name\="com.pkart.service.IProductService"><rhs name\="com.pkart.service.ProductServiceImpl"/></lhs></history>
 content_assist_number_of_computers=20
 content_assist_proposals_background=255,255,255
 content_assist_proposals_foreground=0,0,0

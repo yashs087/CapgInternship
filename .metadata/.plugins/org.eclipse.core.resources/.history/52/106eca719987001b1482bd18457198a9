@@ -1,0 +1,23 @@
+package com.skill.caog.assig8;
+
+import java.util.Comparator;
+import java.util.TreeSet;
+
+public class SortTree {
+			
+	TreeSet<Employee> employees=new TreeSet<Employee>(); 
+	
+	void addEmployee(Employee employee){
+		
+		
+		
+		
+		employees.add(employee);
+	}
+	
+	void sortId() {
+		
+		
+	}
+	
+}

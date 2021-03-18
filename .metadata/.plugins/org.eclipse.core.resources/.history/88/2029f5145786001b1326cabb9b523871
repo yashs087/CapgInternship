@@ -1,0 +1,98 @@
+package com.pkart.controller;
+
+import java.util.List;
+import java.util.Scanner;
+
+import com.pkart.model.Product;
+import com.pkart.service.IProductService;
+import com.pkart.service.ProductServiceImpl;
+
+public class AdminController {
+
+	private static IProductService productService;
+	Scanner scanner = new Scanner(System.in);
+	public AdminController() {
+
+		if (null == productService) {
+			productService = new ProductServiceImpl();
+		}
+	}
+	
+	public void productOperations(){
+		System.out.println(" 1.Add/Update Product \n 2.View Product \n 3.View All Products \n 4.Exit");
+		System.out.println("Enter the choice:");
+		int choice = scanner.nextInt();
+		status =true;
+		while(status) {
+		switch (choice) {
+
+		case 1: //Add Product
+			System.out.println("enter product id, name,price: ");
+			int id = scanner.nextInt();
+			String name = scanner.next();
+			double price = scanner.nextDouble();
+
+			Product p = new Product();
+			p.setId(id);
+			p.setName(name);
+			p.setPrice(price);
+
+			if (productService.add(p)) {
+				System.out.println("Product added successfully.");
+			} else {
+				System.out.println("Product not added.");
+			}
+			break;
+
+
+		case 2: // View Product
+			System.out.println("enter product id:");
+			id = scanner.nextInt();
+			Product product = productService.getProduct(id);
+			System.out.println(product);
+			break;
+		case 3: // View All Prducts
+			List<Product> allProducts = productService.getAllProducts();
+
+			for (Product prod : allProducts) {
+				System.out.println(prod);
+			}
+			break;
+
+		case 4:
+			System.out.println("Exiting Product operations..!");
+			operations();
+
+		}
+		}
+
+	}
+	
+	
+	
+	public void operations() {
+
+		
+		boolean status = true;
+		while (status) {
+			System.out.println("------Admin Operations----");
+
+			System.out.println(" 1. Product operations \n 2. Customer opertions \n 3.Exit");
+			System.out.println("Enter the choice:");
+			int choice = scanner.nextInt();
+
+			switch (choice) {
+
+			case 1: //Add Product
+				productOperations();
+				break;
+			case 3: //Exiting Admin operations
+				System.out.println("Exiting Admin operations..!");
+				status = false;
+
+		}
+
+	}
+	}
+
+}

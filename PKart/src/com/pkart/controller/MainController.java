@@ -31,14 +31,14 @@ public class MainController {
 			try {
 				char ch = br.readLine().charAt(0);
 				switch (ch) {
-				case '1':
+				case '1': // Admin controller
 					adminController.operations();
 					break;
-				case '2':
+				case '2': // Customer comtroller
 					
 					logIn.operations();
 					break;
-				case '3':
+				case '3': //Exit
 					System.out.println("-----------EXIT------------");
 					System.out.println("Exiting From The System \nThankyou.");
 					action = false;

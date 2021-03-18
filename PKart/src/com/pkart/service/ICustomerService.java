@@ -16,4 +16,8 @@ public interface ICustomerService {
 	boolean isRegistered(int customerId);
 	
 	boolean vailidate(int customerId, int pass);
+	
+	List<Customer> getAllCustomer();
+	
+	boolean removeCustomer(int customerId);
 }

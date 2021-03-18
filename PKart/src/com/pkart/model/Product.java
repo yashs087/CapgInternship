@@ -1,17 +1,15 @@
 package com.pkart.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Product {
-
-	
 
 	private int id;
 	private String name;
 	private double price;
 	private int quantity;
-	private Date dateOfManufacture;
-	private Date dateOfExpiry;
+	private LocalDate dateOfManufacture;
+	private LocalDate dateOfExpiry;
 
 	public Product() {
 	}
@@ -23,7 +21,7 @@ public class Product {
 		this.price = price;
 	}
 	
-	public Product(int id, String name, double price, int quantity, Date dateOfManufacture, Date dateOfExpiry) {
+	public Product(int id, String name, double price, int quantity, LocalDate dateOfManufacture, LocalDate dateOfExpiry) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -32,6 +30,7 @@ public class Product {
 		this.dateOfManufacture = dateOfManufacture;
 		this.dateOfExpiry = dateOfExpiry;
 	}
+
 
 	public int getId() {
 		return id;
@@ -65,26 +64,25 @@ public class Product {
 		this.quantity = quantity;
 	}
 
-	public Date getDateOfManufacture() {
+	public LocalDate getDateOfManufacture() {
 		return dateOfManufacture;
 	}
 
-	public void setDateOfManufacture(Date dateOfManufacture) {
+	public void setDateOfManufacture(LocalDate dateOfManufacture) {
 		this.dateOfManufacture = dateOfManufacture;
 	}
 
-	public Date getDateOfExpiry() {
+	public LocalDate getDateOfExpiry() {
 		return dateOfExpiry;
 	}
 
-	public void setDateOfExpiry(Date dateOfExpiry) {
+	public void setDateOfExpiry(LocalDate dateOfExpiry) {
 		this.dateOfExpiry = dateOfExpiry;
 	}
 
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", quantity=" + quantity
-				+ ", dateOfManufacture=" + dateOfManufacture + ", dateOfExpiry=" + dateOfExpiry + "]";
+		return "Product [\nid=" + id + ", \nname=" + name + ", \nprice=" + price + ", \nquantity=" + quantity
+				+ ", \ndateOfManufacture=" + dateOfManufacture + ", \ndateOfExpiry=" + dateOfExpiry + "]";
 	}
-
 }

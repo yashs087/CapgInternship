@@ -1,0 +1,17 @@
+package com.pkart.util;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class ParseDate {
+	static String date;
+	public ParseDate(String date) {
+		ParseDate.date =date;
+	}
+	
+	static LocalDate parseDate(){
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		return LocalDate.parse(date, formatter);
+	}
+}

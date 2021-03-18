@@ -2,6 +2,8 @@ package com.pkart.service;
 
 
 
+import java.util.List;
+
 import com.pkart.dao.CustomerDaoImp;
 import com.pkart.dao.ICustomerDao;
 import com.pkart.model.Customer;
@@ -63,6 +65,22 @@ public class CustomerServiceImp implements ICustomerService{
 	public boolean vailidate(int customerId, int pass) {
 		
 		if( customerDao.vailidate(customerId)==pass) {
+			return true;
+		}
+		return false;
+	}
+
+
+	@Override
+	public List<Customer> getAllCustomer() {
+		return customerDao.allCustomer();
+	}
+
+
+	@Override
+	public boolean removeCustomer(int customerId) {
+		customerDao.removeCustomer(customerId);
+		if (customerDao.viewProfile(customerId)==null) {
 			return true;
 		}
 		return false;

@@ -1,0 +1,57 @@
+package com.skill.caog.assig8;
+import java.time.LocalDate;
+
+
+public class Product  {
+
+	public Product(int id, String name, int price, LocalDate dateOfExpiry, LocalDate dateOfManufacture) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.dateOfExpiry = dateOfExpiry;
+		this.dateOfManufacture = dateOfManufacture;
+	}
+	int id;
+	String name;
+	int price;
+	LocalDate dateOfExpiry;
+	LocalDate dateOfManufacture;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public LocalDate getDateOfExpiry() {
+		return dateOfExpiry;
+	}
+	public void setDateOfExpiry(LocalDate dateOfExpiry) {
+		this.dateOfExpiry = dateOfExpiry;
+	}
+	public LocalDate getDateOfManufacture() {
+		return dateOfManufacture;
+	}
+	public void setDateOfManufacture(LocalDate dateOfManufacture) {
+		this.dateOfManufacture = dateOfManufacture;
+	}
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", dateOfExpiry=" + dateOfExpiry
+				+ ", dateOfManufacture=" + dateOfManufacture + "]";
+	}
+	
+	
+}

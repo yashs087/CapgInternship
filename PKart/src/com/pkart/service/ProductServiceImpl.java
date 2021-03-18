@@ -19,7 +19,9 @@ public class ProductServiceImpl implements IProductService {
 
 	@Override
 	public boolean add(Product product) {
-
+		
+		Product update=productDao.getProduct(product.getId());
+				update.setQuantity(update.getQuantity()+1);
 		productDao.add(product);
 
 		Product savedProduct = productDao.getProduct(product.getId());
@@ -52,5 +54,25 @@ public class ProductServiceImpl implements IProductService {
 	public List<Product> getAllProducts() {
 		return productDao.getAllProducts();
 	}
+
+	@Override
+	public boolean removeProduct(int productId) {
+		if (productDao.getProduct(productId)==null) {
+			System.out.println(productId+"does not exists");
+			return false;
+		}
+		
+		productDao.removeProduct(productId);
+		if (productDao.getProduct(productId)==null) {
+			
+			return true;
+			
+		}
+		else {
+			
+		return false;
+
+		}
+		}
 
 }
